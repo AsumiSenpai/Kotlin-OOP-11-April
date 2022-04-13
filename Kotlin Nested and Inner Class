@@ -1,0 +1,18 @@
+class Destruct {
+
+    val a = "Self destruct is locked "
+
+    class Nested {
+        val b = "Self destruct is online"
+        fun callMe() = "Self destruct is activated"
+    }
+}
+
+fun main(args: Array<String>) {
+    // accessing member of Nested class
+    println(Destruct.Nested().b)
+
+    // creating object of Nested class
+    val nested = Destruct.Nested()
+    println(nested.callMe())
+}
