@@ -1,0 +1,29 @@
+open class Car(age: Int, name: String) {
+    init {
+        println("This car name is $name.")
+        println("It's $age years old")
+    }
+}
+
+class Ford(age: Int, name: String): Car(age, name) {
+
+    fun utilityCars() {
+        println("It's heavily used and has many Kilometers.")
+    }
+}
+
+class Lamborghini(age: Int, name: String): Car(age, name) {
+    fun raceCars() {
+        println("It's rarely used and has low Kilometers")
+    }
+}
+
+fun main(args: Array<String>) {
+    val t1 = Ford(15, "Everest")
+    t1.utilityCars()
+
+    println()
+
+    val f1 = Lamborghini(6, "Aventador")
+    f1.raceCars()
+}
