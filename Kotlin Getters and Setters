@@ -1,0 +1,29 @@
+fun main(args: Array<String>) {
+
+    val BMW = Car()
+    BMW.actualAge = 15
+    BMW.age = 15
+    println("BMW actual usage years = ${BMW.actualAge}")
+    println("BMW pretended usage years = ${BMW.age}")
+
+    val Mercedes = Car()
+    Mercedes.actualAge = 35
+    Mercedes.age = 35
+    println("Mercedes actual usage years = ${Mercedes.actualAge}")
+    println("Mercedes pretended usage years = ${Mercedes.age}")
+}
+
+class Car {
+    var age: Int = 0
+        get() = field
+        set(value) {
+            field = if (value < 18)
+                18
+            else if (value >= 18 && value <= 30)
+                value
+            else
+                value-3
+        }
+
+    var actualAge: Int = 0
+}
