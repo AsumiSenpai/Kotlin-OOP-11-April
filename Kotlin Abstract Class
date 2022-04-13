@@ -1,0 +1,25 @@
+abstract class Car(name: String) {
+
+    init {
+        println("This car brand is $name.")
+    }
+
+    fun displayPlate(plate: Int) {
+        println("It has $plate as the plate number")
+    }
+
+    abstract fun displayJob(description: String)
+}
+
+class Race(name: String): Car(name) {
+
+    override fun displayJob(description: String) {
+        println(description)
+    }
+}
+
+fun main(args: Array<String>) {
+    val jack = Race("Nissan")
+    jack.displayJob("It's great for drifting")
+    jack.displayPlate(94745)
+}
